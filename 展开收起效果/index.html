@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        *{margin: 0; padding: 0;}
+        html, body {margin: 0; padding: 0;}
+        #container {background-color: #e8e8e8; margin: 0 auto; padding: 5px; width: 800px; height: auto; text-align: center; overflow: hidden;}
+        .content {text-align: center; padding: 15px; height: 50px; background-color: #ccc; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>欢迎来到慕课网</h1>
+        <h2>大幅广告</h2>
+        <h2>大幅广告</h2>
+        <h2>大幅广告</h2>
+        <h2>大幅广告</h2>
+        <h2>大幅广告</h2>
+    </div>
+    <div class="content">
+        慕课网 <br> 正文
+    </div>
+    <script>
+        window.onload = function () {
+            addH();
+            setTimeout(subH, 3000);
+        }
+        var h = 0, box = document.getElementById('container');
+        function addH() {
+            if (h < 300) {
+                h += 5;
+                box.style.height = h + 'px';
+            } else {
+                return;
+            }
+            setTimeout(addH, 30);
+        }
+        function subH() {
+            if (h > 0) {
+                h -= 5;
+                box.style.height = h + 'px';
+            } else {
+                box.style.display = 'none';
+                return;
+            }
+            setTimeout(subH, 30);
+        }
+    </script>
+</body>
+</html>
